@@ -1,7 +1,7 @@
 ---
 date: '1'
 title: 'PopOut'
-cover: './popout.png'
+cover: './demo.png'
 github: 'https://github.com/opspark-ctrl-alt-elite/PopOut1'
 external: ''
 tech:
