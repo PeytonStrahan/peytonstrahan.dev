@@ -60,18 +60,24 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const two = <h2 className="big-heading">Peyton Strahan.</h2>;
+  const three = (
+    <h3 className="big-heading">I create applications using my fingers and a keyboard.</h3>
+  );
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
+        {/* I’m a software engineer specializing in building (and occasionally designing) exceptional
         digital experiences. Currently, I’m focused on building accessible, human-centered products
         at{' '}
         <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
           Upstatement
         </a>
-        .
+        . */}
+        When I work on a project, I tend to try to make at least one aspect of it fun because if
+        something is fun, then it's enjoyable to use. If something is enjoyable to use, then people
+        are more likely to use it and to view it positively. I am currently working on
+        XXXXXXXXXXXXXXXXXX.
       </p>
     </>
   );

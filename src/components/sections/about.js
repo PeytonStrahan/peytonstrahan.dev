@@ -125,7 +125,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Node.js', 'MongoDB', 'MySQL'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,30 +135,40 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
+              {/* Hello! My name is Brittany and I enjoy creating things that live on the internet. My
               interest in web development started back in 2012 when I decided to try editing custom
               Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              about HTML &amp; CSS! */}
+              Greetings! You can call me Peyton Strahan. I'm a full-stack software engineer who
+              became interested in programming mostly due to video games and video game modding. My
+              journey into JavaScript and software development began during my last year in high
+              school and I have not stopped learning since then.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
+              {/* Fast-forward to today, and I’ve had the privilege of working at{' '}
               <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
               <a href="https://starry.com/">a start-up</a>,{' '}
               <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
               <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
               main focus these days is building accessible, inclusive products and digital
               experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              clients. */}
+              After leaving high school, I went into Operation Spark's high school program and then
+              it's adult program. I have created many applications and worked with several different
+              technologies throughout both my time in highschool and my 1,622 hours in Operation
+              Spark.
             </p>
 
             <p>
-              I also recently{' '}
+              {/* I also recently{' '}
               <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
                 launched a course
               </a>{' '}
               that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              &amp; React. */}
+              EITHER TALK ABOUT NEW THING YOU ARE MAKING (LIKE MARIO PAINT OR TOP-DOWN SHOOTER) OR
+              POPOUT!!!
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
