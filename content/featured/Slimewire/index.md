@@ -4,7 +4,7 @@ title: 'Slimewire'
 cover: './demo.png'
 github: 'https://github.com/C0decepti0n/probableDisco'
 external: ''
-# cta: 'https://www.newline.co/courses/build-a-spotify-connected-app'
+cta: ''
 tech:
   - React
   - Express
