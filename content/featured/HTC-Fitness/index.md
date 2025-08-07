@@ -1,5 +1,5 @@
 ---
-date: '2'
+date: '3'
 title: 'HTC-Fitness'
 cover: './demo.png'
 github: 'https://github.com/C0decepti0n/HTC-Fitness'
