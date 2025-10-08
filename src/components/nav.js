@@ -65,12 +65,29 @@ const StyledNav = styled.nav`
   .logo {
     ${({ theme }) => theme.mixins.flexCenter};
 
+    button {
+      color: var(--green);
+      width: 42px;
+      height: 42px;
+      position: relative;
+      z-index: 1;
+      background-color: transparent;
+
+      .music-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    }
+
     a {
       color: var(--green);
       width: 42px;
       height: 42px;
       position: relative;
       z-index: 1;
+      background-color: transparent;
 
       .hex-container {
         position: absolute;
@@ -155,6 +172,7 @@ const Nav = ({ isHome }) => {
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const [musicIsOpen, setMusicIsOpen] = useState(false);
 
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);
@@ -205,29 +223,29 @@ const Nav = ({ isHome }) => {
     </div>
   );
 
-  // const ShowHideMusicPlayer = (
-  //   <div className="logo" tabIndex="-1">
-  //     {isHome ? (
-  //       <a href="/" aria-label="home">
-  //         <div className="hex-container">
-  //           <IconHex />
-  //         </div>
-  //         <div className="logo-container">
-  //           <IconLogo />
-  //         </div>
-  //       </a>
-  //     ) : (
-  //       <Link to="/" aria-label="home">
-  //         <div className="hex-container">
-  //           <IconHex />
-  //         </div>
-  //         <div className="logo-container">
-  //           <IconLogo />
-  //         </div>
-  //       </Link>
-  //     )}
-  //   </div>
-  // );
+  const ShowHideMusicPlayer = (
+    <div className="logo" tabIndex="-1">
+      {musicIsOpen ? (
+        <button onClick={() => setMusicIsOpen(false)} aria-label="hide music player">
+          <div className="music-container">
+            <IconUp />
+          </div>
+          {/* <div className="logo-container">
+            <IconUp />
+          </div> */}
+        </button>
+      ) : (
+        <button onClick={() => setMusicIsOpen(true)} aria-label="show music player">
+          <div className="music-container">
+            <IconDown />
+          </div>
+          {/* <div className="logo-container">
+            <IconDown />
+          </div> */}
+        </button>
+      )}
+    </div>
+  );
 
   const MusicPlayer = (
     <div>
@@ -294,11 +312,7 @@ const Nav = ({ isHome }) => {
           <>
             {Logo}
 
-            <div className="logo" tabIndex="-1">
-              <div className="hex-container">
-                <IconUp />
-              </div>
-            </div>
+            {ShowHideMusicPlayer}
 
             {MusicPlayer}
 
@@ -324,11 +338,7 @@ const Nav = ({ isHome }) => {
                   <>
                     {Logo}
 
-                    <div className="logo" tabIndex="-1">
-                      <div className="hex-container">
-                        <IconDown />
-                      </div>
-                    </div>
+                    {ShowHideMusicPlayer}
 
                     {MusicPlayer}
                   </>
