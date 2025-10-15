@@ -69,7 +69,7 @@ const StyledNav = styled.nav`
       color: var(--green);
       width: 42px;
       height: 42px;
-      position: relative;
+      position: absolute;
       z-index: 1;
       background-color: transparent;
 
@@ -79,6 +79,11 @@ const StyledNav = styled.nav`
         left: 0;
         z-index: -1;
       }
+    }
+
+    .music-player {
+      position: relative;
+      top: 210px;
     }
 
     a {
@@ -200,7 +205,7 @@ const Nav = ({ isHome }) => {
   const fadeDownClass = isHome ? 'fadedown' : '';
 
   const Logo = (
-    <div className="logo" tabIndex="-1">
+    <div className="logo" tabIndex="-2">
       {isHome ? (
         <a href="/" aria-label="home">
           <div className="hex-container">
@@ -223,32 +228,8 @@ const Nav = ({ isHome }) => {
     </div>
   );
 
-  const ShowHideMusicPlayer = (
-    <div className="logo" tabIndex="-1">
-      {musicIsOpen ? (
-        <button onClick={() => setMusicIsOpen(false)} aria-label="hide music player">
-          <div className="music-container">
-            <IconUp />
-          </div>
-          {/* <div className="logo-container">
-            <IconUp />
-          </div> */}
-        </button>
-      ) : (
-        <button onClick={() => setMusicIsOpen(true)} aria-label="show music player">
-          <div className="music-container">
-            <IconDown />
-          </div>
-          {/* <div className="logo-container">
-            <IconDown />
-          </div> */}
-        </button>
-      )}
-    </div>
-  );
-
   const MusicPlayer = (
-    <div>
+    <div className="music-player">
       <iframe
         title="The Calamity Mod OST"
         width="100%"
@@ -299,6 +280,27 @@ const Nav = ({ isHome }) => {
     </div>
   );
 
+  const ShowHideMusicPlayer = (
+    <div className="logo" tabIndex="-1">
+      {musicIsOpen ? (
+        <>
+          <button onClick={() => setMusicIsOpen(false)} aria-label="hide music player">
+            <div className="music-container">
+              <IconUp />
+            </div>
+          </button>
+          {MusicPlayer}
+        </>
+      ) : (
+        <button onClick={() => setMusicIsOpen(true)} aria-label="show music player">
+          <div className="music-container">
+            <IconDown />
+          </div>
+        </button>
+      )}
+    </div>
+  );
+
   const ResumeLink = (
     <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
       Resume
@@ -313,8 +315,6 @@ const Nav = ({ isHome }) => {
             {Logo}
 
             {ShowHideMusicPlayer}
-
-            {MusicPlayer}
 
             <StyledLinks>
               <ol>
@@ -339,8 +339,6 @@ const Nav = ({ isHome }) => {
                     {Logo}
 
                     {ShowHideMusicPlayer}
-
-                    {MusicPlayer}
                   </>
                 </CSSTransition>
               )}
