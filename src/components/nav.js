@@ -283,14 +283,11 @@ const Nav = ({ isHome }) => {
   const ShowHideMusicPlayer = (
     <div className="logo" tabIndex="-1">
       {musicIsOpen ? (
-        <>
-          <button onClick={() => setMusicIsOpen(false)} aria-label="hide music player">
-            <div className="music-container">
-              <IconUp />
-            </div>
-          </button>
-          {MusicPlayer}
-        </>
+        <button onClick={() => setMusicIsOpen(false)} aria-label="hide music player">
+          <div className="music-container">
+            <IconUp />
+          </div>
+        </button>
       ) : (
         <button onClick={() => setMusicIsOpen(true)} aria-label="show music player">
           <div className="music-container">
@@ -298,6 +295,7 @@ const Nav = ({ isHome }) => {
           </div>
         </button>
       )}
+      <div hidden={!musicIsOpen}>{MusicPlayer}</div>
     </div>
   );
 
